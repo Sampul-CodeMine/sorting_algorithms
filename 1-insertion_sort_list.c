@@ -16,7 +16,7 @@ void insertion_sort_list(listint_t **list)
 
 	if (!key || (!key->prev && !key->next))
 		return;
-	
+
 	while (key && key->next)
 	{
 		if (key->n > key->next->n)
