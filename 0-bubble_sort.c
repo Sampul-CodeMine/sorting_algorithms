@@ -5,7 +5,9 @@ void swapper(int *, int *);
 /**
  * bubble_sort - This is a function that sorts an array of integers in
  * ascending order
- *
+ * @array: An array of integer elements to be sorted
+ * @size: integer value specifying the size of the array
+ * Returns: Nothing
  */
 
 void bubble_sort(int *array, size_t size)
