@@ -40,7 +40,8 @@ void bubble_sort(int *array, size_t size)
  * @val_a_ptr: ptr to array element
  * @val_b_ptr: prt to array element
  */
-    void swapper(int *val_a_ptr, int *val_b_ptr)
+
+void swapper(int *val_a_ptr, int *val_b_ptr)
 {
 	int temp;
 
