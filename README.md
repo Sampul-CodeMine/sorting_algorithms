@@ -26,6 +26,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - A list/array does not need to be sorted if its size is less than 2.
 
 **These Functions and Data Structures should be used**
+
 ```c
 /* print_array.c */
 
@@ -105,11 +106,83 @@ typedef struct listint_s
 
 ## Tasks To Perform
 
-### **Bubble Sort**: 
+### **Bubble Sort**
 
-- Write a function that sorts an array of integers in ascending order using the Bubble sort algorithm using the prototpye `void bubble_sort(int *array, size_t size)`
-> Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the input list element by element, comparing the current element with the one after it, swapping their values if needed. These passes through the list are repeated until no swaps had to be performed during a pass, meaning that the list has become fully sorted. The algorithm, which is a comparison sort, is named for the way the larger elements "bubble" up to the top of the list.
+- Write a function that sorts an array of integers in ascending order using the `Bubble Sort` algorithm using the prototpye `void bubble_sort(int *array, size_t size)`
+
+> `BUBBLE SORT`, sometimes referred to as `Sinking Sort`, is a simple sorting algorithm that repeatedly steps through the input list element by element, comparing the current element with the one after it, swapping their values if needed. These passes through the list are repeated until no swaps had to be performed during a pass, meaning that the list has become fully sorted. The algorithm, which is a comparison sort, is named for the way the larger elements "bubble" up to the top of the list.
 > This simple algorithm performs poorly in real world use and is used primarily as an educational tool. More efficient algorithms such as quicksort, timsort, or merge sort are used by the sorting libraries built into popular programming languages such as Python and Java
+
+```python
+# simple bubble sort using python
+#!/usr/bin/python3
+
+def bubblesort(arr):
+    size = len(arr)
+    for i in range(size):
+        swapped = False
+        for j in range(0, size - i - 1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+                print(arr)
+        print("")
+    if not swapped:
+        exit()
+
+
+nums = [100, 53, 4, 12, 90, 7, 18, -30]
+
+print("Original Array: ", nums)
+print("")
+bubblesort(nums)
+```
+
+### **Insertion Sort**
+
+- Write a function that sorts a doubly linked list of integers in ascending order using the `Insertion Sort` algorithm using the prototype `void insertion_sort_list(listint_t **list)`.
+
+> `INSERTION SORT` is a simple sorting algorithm that builds the final sorted array (or list) one item at a time by comparisons. It is much less efficient on large lists than more advanced algorithms such as `quicksort`, `heapsort`, or `merge sort`. However, insertion sort provides several advantages:
+>
+> - Simple implementation: Jon Bentley shows a three-line C/C++ version that is five lines when optimized.
+> - Efficient for (quite) small data sets, much like other quadratic (i.e., O(n<sup>2</sup>)) sorting algorithms
+> - More efficient in practice than most other simple quadratic algorithms such as selection sort or bubble sort
+> - Adaptive, i.e., efficient for data sets that are already substantially sorted: the time complexity is O(kn) when each element in the input is no more than k places away from its sorted position
+> - Stable; i.e., does not change the relative order of elements with equal keys
+> - In-place; i.e., only requires a constant amount O(1) of additional memory space
+> - Online; i.e., can sort a list as it receives it
+> When people manually sort cards in a bridge hand, most use a method that is similar to insertion sort.
+
+```python
+# simple insertion sort using python
+#!/usr/bin/python3
+
+def insertion_sort(arr):
+    size = len(arr)
+    for i in range(1, size):
+        key = arr[i]
+        j = i - 1
+
+        while key < arr[j] and j >= 0:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+        print(arr)
+
+
+nums = [100, 53, 4, 12, 90, 7, 18, -30]
+print("Original Array: ", nums)
+print("")
+insertion_sort(nums)
+```
+
+
+
+
+
+
+
+
 
 ---
 

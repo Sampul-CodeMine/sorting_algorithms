@@ -24,7 +24,13 @@ typedef struct listint_s
 /* Custom functions that will be called when the header file is included*/
 void print_array(const int *, size_t);
 void print_list(const listint_t *);
+
+/* Bubble Sort */
 void swapper(int *, int *);
 void bubble_sort(int *, size_t);
+
+/* Insertion Sort */
+void insertion_sort_list(listint_t **);
+void swap(listint_t **, listint_t **);
 
 #endif /* SORT_H */
