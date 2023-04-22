@@ -36,7 +36,7 @@ void bubble_sort(int *array, size_t size)
 }
 
 /**
- * swap - swap array elements
+ * swapper - swap array elements
  * @val_a_ptr: ptr to array element
  * @val_b_ptr: prt to array element
  */
