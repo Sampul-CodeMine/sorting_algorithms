@@ -33,4 +33,8 @@ void bubble_sort(int *, size_t);
 void insertion_sort_list(listint_t **);
 void swap(listint_t **, listint_t **);
 
+/* Selection Sort */
+void s_swap(int *, int *);
+void selection_sort(int *, size_t);
+
 #endif /* SORT_H */
