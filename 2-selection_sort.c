@@ -2,15 +2,14 @@
 
 void s_swap(int *, int *);
 
-    /**
-     * selection_sort - algorithm to sort an array of integers.
-     * This is a very slow algorithm
-     * @array: array of integer elements.
-     * @size: size of array
-     * Return: Nothing
-     */
-
-    void selection_sort(int *array, size_t size)
+/**
+ * selection_sort - algorithm to sort an array of integers.
+ * This is a very slow algorithm
+ * @array: array of integer elements.
+ * @size: size of array
+ * Return: Nothing
+ */
+void selection_sort(int *array, size_t size)
 {
 	size_t itr = 0;
 	size_t steps = 0;
@@ -18,7 +17,7 @@ void s_swap(int *, int *);
 
 	if (!array || size < 2)
 		return;
-	
+
 	for (steps = 0; steps < (size - 1); steps++)
 	{
 		init_low = steps;
@@ -33,7 +32,7 @@ void s_swap(int *, int *);
 }
 
 /**
- * swapper - swap array elements
+ * s_swap - swap array elements
  * @val_a_ptr: ptr to array element
  * @val_b_ptr: prt to array element
  */
