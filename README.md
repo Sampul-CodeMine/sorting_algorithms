@@ -189,14 +189,88 @@ insertion_sort(nums)
 #!/usr/bin/python3
 
 def selection_sort(arr):
-    
+    for step in range(size):
+        min_idx = step
+
+        for i in range(step + 1, size):
+         
+            # to sort in descending order, change > to < in this line
+            # select the minimum element in each loop
+            if array[i] < array[min_idx]:
+                min_idx = i
+         
+        # put min at the correct position
+        (array[step], array[min_idx]) = (array[min_idx], array[step])
 
 
 nums = [100, 53, 4, 12, 90, 7, 18, -30]
 print("Original Array: ", nums)
 print("")
-selection_sort(nums)
+arr_len = len(nums)
+selection_sort(nums, arr_len)
 ```
+
+### **Quick Sort**
+
+- Write a function that sorts an array of integers in ascending order using the `Quick Sort` algorithm using the prototpye `void quick_sort(int *array, size_t size);`.
+
+> `QUICK SORT` is an efficient, general-purpose sorting algorithm. Quicksort was developed by British computer scientist Tony Hoare in 1959 and published in 1961. It is still a commonly used algorithm for sorting. Overall, it is slightly faster than `merge sort` and `heapsort` for randomized data, particularly on larger distributions.
+> `Quicksort` is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. For this reason, it is sometimes called `Partition-Exchange Sort`. The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting.
+> `Quicksort` is a comparison sort, meaning that it can sort items of any type for which a "less-than" relation (formally, a total order) is defined. Most implementations of quicksort are not stable, meaning that the relative order of equal sort items is not preserved.
+> Mathematical analysis of quicksort shows that, on average, the algorithm takes `O(nlog n)` comparisons to sort `n` items. In the worst case, it make O(n<sup>2</sup>) comparisons.
+
+```python
+# simple quick sort using python
+#!/usr/bin/python3
+
+# function to find the partition position
+def partition(array, low, high):
+    # choose the rightmost element as pivot
+    pivot = array[high]
+
+    # pointer for greater element
+    i = low - 1
+
+	# traverse through all elements
+	# compare each element with pivot
+	for j in range(low, high):
+		if array[j] <= pivot:
+		# if element smaller than pivot is found
+		# swap it with the greater element pointed by i
+		i = i + 1
+
+		# swapping element at i with element at j
+		(array[i], array[j]) = (array[j], array[i])
+
+	# swap the pivot element with the greater element specified by i
+	(array[i + 1], array[high]) = (array[high], array[i + 1])
+
+	# return the position from where partition is done
+	return i + 1
+
+# function to perform quicksort
+def quickSort(array, low, high):
+    if low < high:
+        # find pivot element such that
+        # element smaller than pivot are on the left
+        # element greater than pivot are on the right
+        pi = partition(array, low, high)
+
+        # recursive call on the left of pivot
+        quickSort(array, low, pi - 1)
+
+        # recursive call on the right of pivot
+        quickSort(array, pi + 1, high)
+	return arr
+
+
+nums = [100, 53, 4, 12, 90, 7, 18, -30]
+arr_len = len(nums) - 1
+print("Original Array: ", nums)
+print("")
+print(quickSort(nums, 0, arr_len))
+```
+
 
 
 

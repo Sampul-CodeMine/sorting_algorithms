@@ -37,4 +37,10 @@ void swap(listint_t **, listint_t **);
 void s_swap(int *, int *);
 void selection_sort(int *, size_t);
 
+/* Quick Sort */
+void quick_sort(int *, size_t);
+void q_swap(int *, int*);
+int partitioner(int *, size_t, int, int);
+void sorter(int *, size_t, int, int);
+
 #endif /* SORT_H */
