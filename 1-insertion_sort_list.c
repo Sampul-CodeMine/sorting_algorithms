@@ -8,69 +8,39 @@ void swap(listint_t **, listint_t **);
  * @list: The double linked-list to sort
  * Return: Nothing
  */
+
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *key = *list;
+	listint_t *key;
 	listint_t *back;
-	listint_t *aux;
 
-	if (!key || (!key->prev && !key->next))
+	if (list == NULL)
 		return;
 
-	while (key && key->next)
+	key = *list;
+	while (key && key->next != NULL)
 	{
-		if (key->n > key->next->n)
+		while (key->next != NULL)
 		{
-			aux = key;
-			swap(&aux, list);
-			print_list(*list);
-			key = aux;
-			back = aux;
-			while (back && back->prev)
+			if (key->n > key->next->n)
 			{
-				if (back->n < back->prev->n)
-				{
-					aux = back->prev;
-					swap(&aux, list);
-					print_list(*list);
-					back = aux->next;
-				}
-				back = back->prev;
+				back = key;
+				if (key->prev != NULL)
+					key->prev->next = back->next;
+				key->next->prev = back->prev;
+				key->prev = back->next;
+				key->next = back->next->next;
+				key->prev->next = back;
+
+				if (key->next != NULL)
+					key->next->prev = back;
+				if (key->prev->prev == NULL)
+					*list = key->prev;
+				print_list(*list);
+				key = *list; 
 			}
+			key = key->next;
 		}
 		key = key->next;
 	}
-}
-
-
-/**
- * swap - function that swaps two (2) nodes of a DLL (Double Linked-List)
- * @key_ele: the key node to change
- * @list: the DLL head
- * Return: Nothing
-*/
-void swap(listint_t **key_ele, listint_t **list)
-{
-	listint_t *holder = *key_ele;
-	listint_t *temp, *pack;
-
-	if (!(*key_ele)->prev)
-		*list = (*key_ele)->next;
-
-	holder = pack = *key_ele;
-	temp = holder->next;
-
-	holder->next = temp->next;
-	pack = holder->prev;
-	holder->prev = temp;
-	temp->next = holder;
-	temp->prev = pack;
-
-	if (temp->prev)
-		temp->prev->next = temp;
-
-	if (holder->next)
-		holder->next->prev = holder;
-
-	*key_ele = temp;
 }

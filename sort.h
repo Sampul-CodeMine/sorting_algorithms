@@ -31,7 +31,6 @@ void bubble_sort(int *, size_t);
 
 /* Insertion Sort */
 void insertion_sort_list(listint_t **);
-void swap(listint_t **, listint_t **);
 
 /* Selection Sort */
 void s_swap(int *, int *);
