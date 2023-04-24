@@ -14,7 +14,7 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	sorter(array, size, 0, size -1);
+	sorter(array, size, 0, size - 1);
 }
 
 /**
@@ -63,6 +63,7 @@ int partitioner(int *arr, size_t size, int lo_range, int hi_range)
 void sorter(int *arr, size_t size, int lo_range, int hi_range)
 {
 	int part;
+
 	if (hi_range - lo_range > 0)
 	{
 		part = partitioner(arr, size, lo_range, hi_range);
