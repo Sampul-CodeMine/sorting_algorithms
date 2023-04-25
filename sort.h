@@ -33,8 +33,7 @@ void bubble_sort(int *, size_t);
 void insertion_sort_list(listint_t **);
 void swap(listint_t **, listint_t **);
 
-    /* Selection Sort */
-    void s_swap(int *, int *);
+/* Selection Sort */
 void selection_sort(int *, size_t);
 
 /* Quick Sort */
@@ -42,5 +41,8 @@ void quick_sort(int *, size_t);
 void q_swap(int *, int*);
 int partitioner(int *, size_t, int, int);
 void sorter(int *, size_t, int, int);
+
+/* Shell Sort */
+void shell_sort(int *, size_t);
 
 #endif /* SORT_H */
