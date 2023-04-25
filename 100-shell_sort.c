@@ -16,7 +16,7 @@ void shell_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	
+
 	while (jump <= (size / 3))
 	{
 		jump = jump * 3 + 1;
