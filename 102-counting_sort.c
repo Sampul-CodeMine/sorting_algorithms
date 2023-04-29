@@ -42,8 +42,8 @@ void counting_sort(int *array, size_t size)
 	print_array(counts, large);
 
 	/** Find the index of each element of the original array in count array
-	 * and place the elements in output array
-	 */
+	 * and place the elements in output array */
+
 	for (itr = size - 1; itr >= 0; itr--)
 	{
 		sortptr[counts[array[itr]] - 1] = array[itr];
@@ -51,7 +51,7 @@ void counting_sort(int *array, size_t size)
 	}
 	for (itr = 0; itr < (int)size; itr++)
 		array[itr] = sortptr[itr];
-	
+
 	free(sortptr);
 	free(counts);
 }
