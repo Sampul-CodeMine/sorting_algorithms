@@ -45,4 +45,8 @@ void sorter(int *, size_t, int, int);
 /* Shell Sort */
 void shell_sort(int *, size_t);
 
+/* Counting Sort */
+int get_maximum(int *, int);
+void counting_sort(int *, size_t );
+
 #endif /* SORT_H */

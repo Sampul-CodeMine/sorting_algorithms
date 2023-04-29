@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swapper(int *, int *);
+void swapper(int *);
 
 /**
  * bubble_sort - This is a function that sorts an array of integers in
